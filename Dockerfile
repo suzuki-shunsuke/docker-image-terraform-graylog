@@ -12,7 +12,7 @@ COPY --from=build-env /terraform /usr/local/bin/terraform
 COPY --from=build-env /tmp/terraform-provider-graylog /root/.terraform.d/plugins/terraform-provider-graylog
 RUN chmod a+x /usr/local/bin/* && \
     chmod u+x /root/.terraform.d/plugins/terraform-provider-graylog && \
-    apk add --no-cache ca-certificates && \
+    apk add --no-cache ca-certificates git && \
     mkdir /lib64 && \
     ln -s /lib/libc.musl-x86_64.so.1 /lib64/ld-linux-x86-64.so.2 && \
     rm -rf /var/cache/apk/*
