@@ -1,5 +1,5 @@
 FROM alpine:3.8 AS build-env
-ARG TERRAFORM_VERSION=0.11.11
+ARG TERRAFORM_VERSION=0.11.13
 ARG GO_GRAYLOG_VERSION=1.4.0
 Add https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip /tmp/
 Add https://github.com/suzuki-shunsuke/go-graylog/releases/download/v${GO_GRAYLOG_VERSION}/terraform-provider-graylog_v${GO_GRAYLOG_VERSION}_linux_amd64.gz /tmp/
