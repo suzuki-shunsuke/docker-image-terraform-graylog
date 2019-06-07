@@ -6,11 +6,18 @@
 
 docker image for terraform graylog provider
 
-https://hub.docker.com/r/suzukishunsuke/terraform-graylog
+**Note that We migrate docker registry from Docker Hub to Quay.io .**
 
 ```
-$ docker pull suzukishunsuke/terraform-graylog
+$ docker pull quay.io/suzuki_shunsuke/terraform-graylog
 ```
+
+https://quay.io/repository/suzuki_shunsuke/terraform-graylog
+
+
+Old image (Docker Hub)
+
+https://hub.docker.com/r/suzukishunsuke/terraform-graylog
 
 ## Test at local
 

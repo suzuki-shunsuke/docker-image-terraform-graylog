@@ -1,0 +1,98 @@
+---
+kind: pipeline
+name: test
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: test .drone.yml
+  image: suzukishunsuke/jsonnet-check:v1.1.1-v0.1.0
+  settings:
+    format: true
+    stream: true
+
+---
+kind: pipeline
+name: build-0.11.14__2.5.0
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build and push docker
+  image: plugins/docker:18.09.0
+  settings:
+    build_args:
+    - GO_GRAYLOG_VERSION=2.5.0
+    - TERRAFORM_VERSION=0.11.14
+    password:
+      from_secret: quayio_password
+    registry: quay.io
+    repo: quay.io/suzuki_shunsuke/terraform-graylog
+    tags:
+    - "2.5.0__0.11.14__${DRONE_TAG##v}"
+    - 2.5.0__0.11.14
+    username:
+      from_secret: quayio_username
+  when:
+    event:
+    - tag
+
+- name: test to build docker
+  image: plugins/docker:18.09.0
+  settings:
+    build_args:
+    - GO_GRAYLOG_VERSION=2.5.0
+    - TERRAFORM_VERSION=0.11.14
+    dry_run: true
+    registry: quay.io
+    repo: quay.io/suzuki_shunsuke/terraform-graylog
+  when:
+    event:
+    - pull_request
+
+---
+kind: pipeline
+name: build-0.12.1__2.5.0
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build and push docker
+  image: plugins/docker:18.09.0
+  settings:
+    build_args:
+    - GO_GRAYLOG_VERSION=2.5.0
+    - TERRAFORM_VERSION=0.12.1
+    password:
+      from_secret: quayio_password
+    registry: quay.io
+    repo: quay.io/suzuki_shunsuke/terraform-graylog
+    tags:
+    - "2.5.0__0.12.1__${DRONE_TAG##v}"
+    - 2.5.0__0.12.1
+    username:
+      from_secret: quayio_username
+  when:
+    event:
+    - tag
+
+- name: test to build docker
+  image: plugins/docker:18.09.0
+  settings:
+    build_args:
+    - GO_GRAYLOG_VERSION=2.5.0
+    - TERRAFORM_VERSION=0.12.1
+    dry_run: true
+    registry: quay.io
+    repo: quay.io/suzuki_shunsuke/terraform-graylog
+  when:
+    event:
+    - pull_request
+
+...
