@@ -6,7 +6,7 @@
 
 Docker image for [terraform graylog provider](https://github.com/suzuki-shunsuke/go-graylog/tree/master/terraform)
 
-**Note that We migrate docker registry from Docker Hub to Quay.io .**
+**Note that we migrate the Docker registry from Docker Hub to Quay.io .**
 
 ```console
 $ docker pull quay.io/suzuki_shunsuke/terraform-graylog
