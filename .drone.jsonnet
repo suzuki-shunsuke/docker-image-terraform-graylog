@@ -42,7 +42,7 @@ local build(terraform_version, graylog_version) = {
         ],
       },
       when: {
-        event: ['pull_request'],
+        event: ['pull_request', 'push'],
       },
     },
   ],
@@ -50,12 +50,12 @@ local build(terraform_version, graylog_version) = {
 
 [
   {
-    kind: "pipeline",
-    name: "test",
+    kind: 'pipeline',
+    name: 'test',
     steps: [
       {
-        name: "test .drone.yml",
-        image: "suzukishunsuke/jsonnet-check:v1.1.1-v0.1.0",
+        name: 'test .drone.yml',
+        image: 'suzukishunsuke/jsonnet-check:v1.1.1-v0.1.0',
         settings: {
           format: true,
           stream: true,
@@ -63,6 +63,6 @@ local build(terraform_version, graylog_version) = {
       },
     ],
   },
-  build('0.11.14', '2.5.0'),
-  build('0.12.1', '2.5.0'),
+  build('0.11.14', '3.0.0'),
+  build('0.12.3', '3.0.0'),
 ]
