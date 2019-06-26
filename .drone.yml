@@ -53,6 +53,7 @@ steps:
   when:
     event:
     - pull_request
+    - push
 
 ---
 kind: pipeline
@@ -94,5 +95,6 @@ steps:
   when:
     event:
     - pull_request
+    - push
 
 ...
