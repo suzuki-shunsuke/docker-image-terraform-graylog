@@ -55,7 +55,7 @@ local build(terraform_version, graylog_version) = {
     steps: [
       {
         name: 'test .drone.yml',
-        image: 'suzukishunsuke/jsonnet-check:v1.1.1-v0.1.0',
+        image: 'suzukishunsuke/jsonnet-check:v1.1.2-v0.1.1',
         settings: {
           format: true,
           stream: true,
@@ -63,6 +63,6 @@ local build(terraform_version, graylog_version) = {
       },
     ],
   },
-  build('0.11.14', '3.3.0'),
-  build('0.12.3', '3.3.0'),
+  build('0.11.14', '4.0.0'),
+  build('0.12.3', '4.0.0'),
 ]
