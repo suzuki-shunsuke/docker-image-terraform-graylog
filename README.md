@@ -8,10 +8,6 @@ Docker image for [terraform graylog provider](https://github.com/suzuki-shunsuke
 
 **Note that we migrate the Docker registry from Docker Hub to Quay.io .**
 
-```console
-$ docker pull quay.io/suzuki_shunsuke/terraform-graylog
-```
-
 https://quay.io/repository/suzuki_shunsuke/terraform-graylog
 
 Old image (Docker Hub)
