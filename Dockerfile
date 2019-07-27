@@ -1,4 +1,4 @@
-FROM alpine:3.10.0 AS build-env
+FROM alpine:3.10.1 AS build-env
 ARG TERRAFORM_VERSION
 ARG GO_GRAYLOG_VERSION
 Add https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip /tmp/
@@ -7,7 +7,7 @@ RUN unzip /tmp/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 RUN gzip -d /tmp/terraform-provider-graylog_v${GO_GRAYLOG_VERSION}_linux_amd64.gz
 RUN mv /tmp/terraform-provider-graylog_v${GO_GRAYLOG_VERSION}_linux_amd64 /tmp/terraform-provider-graylog
 
-FROM alpine:3.10.0
+FROM alpine:3.10.1
 COPY --from=build-env /terraform /usr/local/bin/terraform
 COPY --from=build-env /tmp/terraform-provider-graylog /root/.terraform.d/plugins/terraform-provider-graylog
 RUN chmod a+x /usr/local/bin/* && \
