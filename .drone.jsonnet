@@ -64,5 +64,5 @@ local build(terraform_version, graylog_version) = {
     ],
   },
   build('0.11.14', '6.1.2'),
-  build('0.12.5', '6.1.2'),
+  build('0.12.6', '6.1.2'),
 ]
