@@ -15,7 +15,7 @@ steps:
 
 ---
 kind: pipeline
-name: build-0.11.14__6.1.2
+name: build-0.11.14__6.1.5
 
 platform:
   os: linux
@@ -26,15 +26,15 @@ steps:
   image: plugins/docker:18.09.0
   settings:
     build_args:
-    - GO_GRAYLOG_VERSION=6.1.2
+    - GO_GRAYLOG_VERSION=6.1.5
     - TERRAFORM_VERSION=0.11.14
     password:
       from_secret: quayio_password
     registry: quay.io
     repo: quay.io/suzuki_shunsuke/terraform-graylog
     tags:
-    - 6.1.2__0.11.14__${DRONE_TAG##v}
-    - 6.1.2__0.11.14
+    - 6.1.5__0.11.14__${DRONE_TAG##v}
+    - 6.1.5__0.11.14
     username:
       from_secret: quayio_username
   when:
@@ -45,7 +45,7 @@ steps:
   image: plugins/docker:18.09.0
   settings:
     build_args:
-    - GO_GRAYLOG_VERSION=6.1.2
+    - GO_GRAYLOG_VERSION=6.1.5
     - TERRAFORM_VERSION=0.11.14
     dry_run: true
     registry: quay.io
@@ -57,7 +57,7 @@ steps:
 
 ---
 kind: pipeline
-name: build-0.12.6__6.1.2
+name: build-0.12.6__6.1.5
 
 platform:
   os: linux
@@ -68,15 +68,15 @@ steps:
   image: plugins/docker:18.09.0
   settings:
     build_args:
-    - GO_GRAYLOG_VERSION=6.1.2
+    - GO_GRAYLOG_VERSION=6.1.5
     - TERRAFORM_VERSION=0.12.6
     password:
       from_secret: quayio_password
     registry: quay.io
     repo: quay.io/suzuki_shunsuke/terraform-graylog
     tags:
-    - 6.1.2__0.12.6__${DRONE_TAG##v}
-    - 6.1.2__0.12.6
+    - 6.1.5__0.12.6__${DRONE_TAG##v}
+    - 6.1.5__0.12.6
     username:
       from_secret: quayio_username
   when:
@@ -87,7 +87,7 @@ steps:
   image: plugins/docker:18.09.0
   settings:
     build_args:
-    - GO_GRAYLOG_VERSION=6.1.2
+    - GO_GRAYLOG_VERSION=6.1.5
     - TERRAFORM_VERSION=0.12.6
     dry_run: true
     registry: quay.io
