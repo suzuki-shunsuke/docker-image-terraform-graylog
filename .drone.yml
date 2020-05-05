@@ -23,7 +23,7 @@ platform:
 
 steps:
 - name: build and push docker
-  image: plugins/docker:18.09.0
+  image: plugins/docker:18.09.2
   settings:
     build_args:
     - GO_GRAYLOG_VERSION=9.0.0
@@ -42,7 +42,7 @@ steps:
     - tag
 
 - name: test to build docker
-  image: plugins/docker:18.09.0
+  image: plugins/docker:18.09.2
   settings:
     build_args:
     - GO_GRAYLOG_VERSION=9.0.0
@@ -65,7 +65,7 @@ platform:
 
 steps:
 - name: build and push docker
-  image: plugins/docker:18.09.0
+  image: plugins/docker:18.09.2
   settings:
     build_args:
     - GO_GRAYLOG_VERSION=9.0.0
@@ -84,7 +84,7 @@ steps:
     - tag
 
 - name: test to build docker
-  image: plugins/docker:18.09.0
+  image: plugins/docker:18.09.2
   settings:
     build_args:
     - GO_GRAYLOG_VERSION=9.0.0
